@@ -8,7 +8,7 @@ let totalExpense = document.querySelector("#total-expense-value")
 let NumberofExpense = document.querySelector("#expense-count-value")
 let highestExpense = document.querySelector("#highest-expense-value")
 
-// let expenseData = JSON.parse( localStorage.getItem("expenses"))
+let expenseData = JSON.parse( localStorage.getItem("expenses"))
 if(localStorage.getItem('expenses') == true){
     JSON.parse( localStorage.getItem("expenses"))
 }
@@ -105,4 +105,3 @@ addExpenseBtn.addEventListener("click", function() {
 
 
 
-console.log("Testing GitHub")
