@@ -8,10 +8,7 @@ let totalExpense = document.querySelector("#total-expense-value")
 let NumberofExpense = document.querySelector("#expense-count-value")
 let highestExpense = document.querySelector("#highest-expense-value")
 
-let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
-if(localStorage.getItem('expenses') == true){
-    JSON.parse( localStorage.getItem("expenses"))
-}
+let expenseData = JSON.parse(localStorage.getItem("expenses")) || [];
 
 
 function displayExpense() {
@@ -37,6 +34,8 @@ function displayExpense() {
         deleteBtn.addEventListener("click", function() {
 
             expenseData.splice(i, 1)
+
+            localStorage.setItem("expenses", JSON.stringify(expenseData))
 
             displayExpense()
         })
@@ -91,6 +90,7 @@ addExpenseBtn.addEventListener("click", function() {
         amount: amount,
         category: category
     })
+    localStorage.setItem("expenses", JSON.stringify(expenseData))
 
     
 
